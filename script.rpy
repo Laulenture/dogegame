@@ -121,6 +121,54 @@ label finreservenationnal:
     d"On y était prèsque pourtant."
     return
 
+label tournanenbrie:
+    scene location rue
+    show doge mlg
+    d"Tu veux faire ça comment ?"
+    menu:
+     "On défonce tout":
+      jump finfrontal
+     "On y va discretement":
+      jump findiscretement
+
+label finfrontal:
+    scene location banque
+    show doge mlg
+    d"On entre, on prend tous et on se casse !"
+    scene location prison
+    show doge angry
+    d"Je pouvais pas savoir que un convois policier passait à ce moment !"
+    return
+
+label findiscretement:
+    scene location banque
+    show doge mlg
+    d"On y va discrètement, aucun bruit, tel un ninja."
+    scene location prison
+    show doge triste
+    d"Tu savais que les portes du coffre fort se ferment automatiquement ? Moi non plus"
+    return
+
+label legal:
+    scene location ldlc
+    show doge happy
+    d"Et tu veux gagner cet argent comment ?"
+    menu:
+     "Grand mère à la retraite non ?":
+      jump grandmere
+     "Je sais !! On va monter une start-up ! Une boite qui va miner pour nous.":
+      jump monterstartup
+     "Y'a forcément moyen de se faire du fric avec les cours de la bourse !":
+      jump finbourse
+
+label finbourse:
+    scene location bedroom
+    show doge triste
+    d"Pourquoi ça dis que notre balance est à -1463 euros ?"
+    return
+
+
+
 #parti central 
 label flemme:
 
