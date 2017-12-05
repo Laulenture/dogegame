@@ -3,31 +3,168 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-
-
+define d = Character("Doge")
+define g = Character("Gabe")
+define i = Character("Illulinaty")
+define e = Character("EA")
 # The game starts here.
 
 label start:
+    scene location black
+    d "frer?"
+    d "FRer?"
+    d "FRER!!"
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene location bedroom
+    show doge angry  
+    d "Frer, on a plus de chocapic. C'est la galère!!!"
+    d "Et le pire c'est qu'on n'a plus de cash!"
+    show doge happy
+    d "Mais t'inquiet j'ai la solucion des familles"
+    d "On va miner comme jaja"
+    d "Et on va miner un truc incroyable. On va rentrer dans les annales du minage."
+    show doge mlg 
+    d "On va miner des DOGECOIN!"
+    d "Mais tkt on va pas aller a la mine, trop la flemme. On va se faire un pc et il le fera pour nous."
+    d "Mais comment on va faire."
+    menu: 
+     " "
+     "T'a une idée.":
+      jump matrix
+     "Flemme":
+      jump flemme
+     "LDLC":
+      jump ldlc
 
-    scene bg room
+#partie gauche
+label ldlc:
+    scene location ldlc
+    show doge happy
+    $ menu_flag = True
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    d "On est arriver a ldlc."
+    d "On fais quoi ?"
+    menu:
+     "Enfaite j'ai la flemme.":
+      jump finflemme
+     "On va voir pour un pc.":
+      jump choixpc
 
-    show eileen happy
+label choixpc:
+    scene location ldlc
+    show  doge happy
 
-    # These display lines of dialogue.
+    d "Je viens de regarder les prix c'est pas donné."
+    d "On le paye comment ? Ou t'es chaud pour un vol ?"
+    menu:
+     "Voler le pc ":
+      jump finvol
+     "Chercher un moyen de le financer":
+      jump finance
 
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
-
+label finvol:
+    scene location prison
+    show doge triste
+    d"C'était pas vraiment une bonne idée"
+    scene location black
+    "FIN"
     return
+
+label finance:
+    scene location ldlc
+    show doge happy
+    d "Ouais mais on trouve cette argent où mec ?"
+    menu:
+     "On vol cet argent bien sûr !":
+      jump illegal
+     "Y'a forcément un moyen de faire ça dans les règles.":
+      jump legal
+    
+label illegal:
+    scene location ldlc
+    show doge happy
+    d "Ok mais cette argent on le vol où ?"
+    menu:
+     "On vol la déclaration d'indépendance !":
+      jump findeclaration
+     "On cambriole une banque bien sûr !":
+      jump cambriolage
+
+label findeclaration:
+    scene location prison
+    show doge triste
+    d "On a visé peut-être un peut haut non ?"
+    scene location black
+    "FIN"
+    return
+
+label cambriolage:
+    scene location ldlc
+    show doge happy
+    d "Dans ce cas on cambriole quelle..."
+    d "Viens on va discuter de ça dehors"
+    scene location rue
+    show doge happy
+    d"On cambriole quelle banque ?"
+    menu:
+     "La réserve nationnal !":
+      jump finreservenationnal
+     "Une petite banque genre la Caisse D'épargne de Tournan-en-Brie.":
+      jump tournanenbrie
+
+label finreservenationnal:
+    scene location rnus
+    show doge mlg
+    d"Ca va être du gâteau frer."
+    scene location prison
+    show doge triste
+    d"On y était prèsque pourtant."
+    return
+
+#parti central 
+label flemme:
+
+        $ menu_flag = False
+
+        d "Faut trouver un job alors."
+        menu:
+            "Ouais mais flemme.":
+                 jump finflemme
+
+            "Direction pôle emploi.":
+                  jump travail
+
+label finflemme:
+    show doge triste
+    d "Ok pas de chocapic on attend le mois prochain avec la bourse sniff..."
+    return
+label travail:
+    scene location pole_emploi
+    show doge happy
+    d "On a deux jobs a nôtre portée."
+    menu:
+     "Starbucks":
+      jump finstarbucks
+
+     "McDonald's":
+       jump finmcdo
+
+label finstarbucks:
+    scene location starbucks
+    show doge happy
+    d "Au moins on paye pas le café."
+    scene panel starbucks
+    "FIN Starbucks."
+    return
+
+label finmcdo:
+    scene location mcdonalds
+    show doge happy
+    d "Au moins on a des Big Burgers."
+    scene panel mcdo
+    "FIN McDonald's."
+    return
+
+
+     
+
