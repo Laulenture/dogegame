@@ -178,7 +178,109 @@ label grandmere:
     "FIN"
     return
 
+label monterstartup:
+    scene location ldlc
+    show doge happy
+    d"Notre boite va faire quoi en fait ?"
+    menu:
+     "On va faire une boite de minage !":
+      jump startupminage
+     "On va faire une boite qui va inventer le Coucous Conneté !":
+      jump finstartup
 
+label finstartup:
+    scene location office2
+    show doge angry
+    d"POURQUOI CE COUCOUS SE CONNECTE PAS PAR BLUETOOTH ?!!"
+    scene location black
+    "FIN"
+    return
+
+label startupminage:
+    scene location office2
+    show doge happy
+    d"On mine quelle monnaie ?"
+    menu:
+     "Bitcoin":
+      jump finbitcoin
+     "Dogecoin":
+      jump dogecoin
+
+label finbitcoin:
+    scene location black
+    "Bitcoin ? Vraiment ?"
+    "FIN"
+    return
+
+label dogecoin:
+    scene location office2
+    show doge pimp
+    d"On a réussi ! L'argent coule à flot ! Tout est parf-"
+    hide doge happy
+    show chara EA
+    e"Pas tout de suite ! Pour acceder à la vraifin du jeu il va faloir payer 19,99€"
+    menu:
+     "Payer":
+      jump dlc
+     "Ne pas payer":
+      jump fingratuite
+
+label fingratuite:
+    scene location office2
+    show doge triste
+    d"Bon ben tant pis..."
+    scene location black
+    "FIN"
+    return
+
+label dlc:
+    scene location office
+    show doge pimp
+    d"Bien, on ne manque pas d'argent de toute faç-"
+    hide doge pimp
+    show chara illuminati
+    i"Haha ! Je vois que vous êtes bientôt en phase d'être assez riche pour acheter tout internet !"
+    i"Et j'ai une proposition à vous faire:"
+    i"Rejoignez les Illuminati."
+    menu:
+     "Rejoindre les Illuminati":
+      jump illuminati
+     "ne pas les rejoindre":
+      jump findlc
+
+label findlc:
+    show location office
+    show chara illuminati
+    i"Dommage... Néanmoins nous allons prendre vos richessent."
+    scene location bedroom
+    show doge angry
+    d"NON ! MON ARGENT !!"
+    hide doge angry
+    show doge triste
+    d"La fin de la belle vie."
+    scene location black
+    "FIN"
+    return
+
+label illuminati:
+    scene location office
+    show chara illuminati
+    i"Bien ! Maintenant il va faloir participer en finançant."
+    menu:
+     "Comment ? J'ai déjà payer pour le DLC et je doit encore payer ? JAMAIS":
+      jump findlc
+     "Encore ? bien...":
+      jump finilluminati
+
+label finilluminati:
+    scene location office
+    show doge pimp
+    d"Je suppose que nous contrôlons le monde non ?"
+    d"Tu sais ce que ça veux dire ?"
+    d"Ca veux dire que nous controllons aussi les usines de Chocapics !!!"
+    scene location black
+    "Félicitations ! Vous avez trouvé (acheté) la vraie fin du jeu !"
+    return
 
 #parti central 
 label flemme:
