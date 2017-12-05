@@ -147,6 +147,7 @@ label findiscretement:
     scene location prison
     show doge triste
     d"Tu savais que les portes du coffre fort se ferment automatiquement ? Moi non plus"
+    scene location black
     return
 
 label legal:
@@ -165,6 +166,16 @@ label finbourse:
     scene location bedroom
     show doge triste
     d"Pourquoi ça dis que notre balance est à -1463 euros ?"
+    scene location black
+    "FIN"
+    return
+
+label grandmere:
+    scene location rue
+    show doge triste
+    d"Ok grand mère est morte depuis 7 ans en fait..."
+    scene location black
+    "FIN"
     return
 
 
